@@ -4,7 +4,7 @@ An advanced tutorial for astrophysics students on machine learning concepts cent
 
 ## Overview
 
-This tutorial consists of three practical sessions designed to build intuition about latent spaces, embeddings, and parameter-efficient fine-tuning:
+This tutorial consists of four practical sessions designed to build intuition about latent spaces, embeddings, parameter-efficient fine-tuning, and real-world foundation model usage:
 
 | Session | Topic | Type | Notebook |
 |---------|-------|------|----------|
@@ -12,9 +12,9 @@ This tutorial consists of three practical sessions designed to build intuition a
 | **1B** | Extension: MiraBest Radio Galaxies | Homework | [Session1B_Extension_MiraBest.ipynb](Session1B_Extension_MiraBest.ipynb) |
 | **2A** | Embeddings-first Workflows | Live | [Session2A_Embeddings_Workflow.ipynb](Session2A_Embeddings_Workflow.ipynb) |
 | **2B** | Extension: MiraBest Retrieval | Homework | [Session2B_Extension_MiraBest.ipynb](Session2B_Extension_MiraBest.ipynb) |
-| **2C** | Generate Your Own Embeddings | Live | [Session2C_Generate_Own_Embeddings.ipynb](Session2C_Generate_Own_Embeddings.ipynb) |
 | **3A** | LoRA Fine-tuning | Live | [Session3A_LoRA_Finetuning.ipynb](Session3A_LoRA_Finetuning.ipynb) |
-| **3B** | Advanced: TerraTorch | Homework | [Session3B_TerraTorch_Advanced.ipynb](Session3B_TerraTorch_Advanced.ipynb) |
+| **4A** | Generate Your Own Embeddings (Clay) | Live | [Session4A_Generate_Own_Embeddings.ipynb](Session4A_Generate_Own_Embeddings.ipynb) |
+| **4B** | Advanced: TerraTorch | Homework | [Session4B_TerraTorch_Advanced.ipynb](Session4B_TerraTorch_Advanced.ipynb) |
 
 All sessions are designed to be **CPU-friendly** and run on standard laptops. **Apple Silicon (M1/M2/M3) is supported** via MPS acceleration.
 
@@ -93,18 +93,6 @@ You will:
 **Deliverable:** A retrieval demo finding similar radio galaxies.
 
 
-### Session 2C: Generate Your Own Embeddings
-
-**Goal:** Learn to generate embeddings from scratch using Clay.
-
-You will:
-- Set up the Clay model environment
-- Process your own imagery through the foundation model
-- Generate and save embeddings for downstream use
-
-**Deliverable:** Custom embeddings ready for classification or retrieval.
-
-
 ### Session 3A: Parameter-Efficient Fine-Tuning with LoRA
 
 **Goal:** Understand what LoRA is doing and when to use it.
@@ -120,7 +108,19 @@ You will:
 **Deliverable:** A comparison table showing linear probe vs LoRA vs full fine-tune.
 
 
-### Session 3B (Advanced): TerraTorch + Prithvi-EO-2.0
+### Session 4A: Generate Your Own Embeddings with Clay
+
+**Goal:** Learn to generate embeddings from scratch using a real foundation model.
+
+You will:
+- Set up the Clay foundation model environment
+- Process your own imagery through the foundation model
+- Generate and save embeddings for downstream use
+
+**Deliverable:** Custom embeddings ready for classification or retrieval.
+
+
+### Session 4B (Advanced): TerraTorch + Prithvi-EO-2.0
 
 **Goal:** Experience a realistic geospatial fine-tuning workflow.
 
@@ -155,9 +155,9 @@ Uncomment in `environment.yml` if needed:
 |---------|-----|---------|-----|-------|
 | 1A, 1B | Required | Optional | 4GB+ | Faster with GPU or Apple Silicon (MPS) |
 | 2A, 2B | Required | Optional | 4GB+ | Main cost is data download |
-| 2C | Required | Recommended | 8GB+ | Clay model benefits from GPU |
 | 3A | Required | Optional | 4GB+ | Runs fine on CPU |
-| 3B | Required | Recommended | 8GB+ | GPU strongly recommended |
+| 4A | Required | Recommended | 8GB+ | Clay model benefits from GPU |
+| 4B | Required | Recommended | 8GB+ | GPU strongly recommended |
 
 **Apple Silicon users:** The notebooks automatically detect and use MPS (Metal Performance Shaders) for GPU acceleration on M1/M2/M3 Macs.
 
@@ -188,12 +188,12 @@ pip install umap-learn
 
 Each notebook includes an **offline fallback** section that uses built-in sklearn datasets (e.g., `load_digits()`). You can learn the workflow pattern without external downloads.
 
-### GDAL/rasterio issues (Session 3B)
+### GDAL/rasterio issues (Session 4B)
 
 GDAL can be tricky to install. Options:
 
 1. Use conda: `conda install -c conda-forge gdal rasterio`
-2. Skip Session 3B and use Session 3 instead
+2. Skip Session 4B and use Session 3A instead
 3. Use the pre-trained model for inference only (see fallback in notebook)
 
 ---
@@ -204,15 +204,15 @@ GDAL can be tricky to install. Options:
 R2SKA_Advanced_Tutorial/
 ├── README.md
 ├── environment.yml
-├── environment-clay.yml         # For Session 2C (Clay embeddings)
+├── environment-clay.yml         # For Session 4A (Clay embeddings)
 ├── setup_clay_env.sh            # Helper script for Clay setup
 ├── Session1A_Autoencoders_LatentSpaces.ipynb
 ├── Session1B_Extension_MiraBest.ipynb
 ├── Session2A_Embeddings_Workflow.ipynb
 ├── Session2B_Extension_MiraBest.ipynb
-├── Session2C_Generate_Own_Embeddings.ipynb
 ├── Session3A_LoRA_Finetuning.ipynb
-├── Session3B_TerraTorch_Advanced.ipynb
+├── Session4A_Generate_Own_Embeddings.ipynb
+├── Session4B_TerraTorch_Advanced.ipynb
 └── _archive/                    # Original notebook versions
 ```
 
