@@ -6,12 +6,15 @@ An advanced tutorial for astrophysics students on machine learning concepts cent
 
 This tutorial consists of three practical sessions designed to build intuition about latent spaces, embeddings, and parameter-efficient fine-tuning:
 
-| Session | Topic | Duration | Notebook |
-|---------|-------|----------|----------|
-| **1** | Autoencoders & Latent Spaces | 60-75 min | [Session1_Autoencoders_LatentSpaces.ipynb](Session1_Autoencoders_LatentSpaces.ipynb) |
-| **2** | Embeddings-first Workflows | 60-75 min | [Session2_Embeddings_Workflow.ipynb](Session2_Embeddings_Workflow.ipynb) |
-| **3** | LoRA Fine-tuning | 45-60 min | [Session3_LoRA_Finetuning.ipynb](Session3_LoRA_Finetuning.ipynb) |
-| **3B** | Advanced: TerraTorch (optional) | 45-60 min | [Session3B_TerraTorch_Advanced.ipynb](Session3B_TerraTorch_Advanced.ipynb) |
+| Session | Topic | Type | Notebook |
+|---------|-------|------|----------|
+| **1A** | Autoencoders & Latent Spaces | Live | [Session1A_Autoencoders_LatentSpaces.ipynb](Session1A_Autoencoders_LatentSpaces.ipynb) |
+| **1B** | Extension: MiraBest Radio Galaxies | Homework | [Session1B_Extension_MiraBest.ipynb](Session1B_Extension_MiraBest.ipynb) |
+| **2A** | Embeddings-first Workflows | Live | [Session2A_Embeddings_Workflow.ipynb](Session2A_Embeddings_Workflow.ipynb) |
+| **2B** | Extension: MiraBest Retrieval | Homework | [Session2B_Extension_MiraBest.ipynb](Session2B_Extension_MiraBest.ipynb) |
+| **2C** | Generate Your Own Embeddings | Live | [Session2C_Generate_Own_Embeddings.ipynb](Session2C_Generate_Own_Embeddings.ipynb) |
+| **3A** | LoRA Fine-tuning | Live | [Session3A_LoRA_Finetuning.ipynb](Session3A_LoRA_Finetuning.ipynb) |
+| **3B** | Advanced: TerraTorch | Homework | [Session3B_TerraTorch_Advanced.ipynb](Session3B_TerraTorch_Advanced.ipynb) |
 
 All sessions are designed to be **CPU-friendly** and run on standard laptops. **Apple Silicon (M1/M2/M3) is supported** via MPS acceleration.
 
@@ -38,7 +41,7 @@ jupyter lab
 
 ## Session Descriptions
 
-### Session 1: Autoencoders & Latent Spaces
+### Session 1A: Autoencoders & Latent Spaces
 
 **Goal:** Make latent spaces tangible.
 
@@ -51,10 +54,20 @@ You will:
 
 **Deliverable:** A figure showing a latent manifold + reconstructions + interpolations.
 
-**Optional extension:** Apply to MiraBest radio galaxy images.
+
+### Session 1B: Extension - MiraBest Radio Galaxies
+
+**Goal:** Apply autoencoder concepts to real radio astronomy data.
+
+You will:
+- Load MiraBest radio galaxy images
+- Train an autoencoder on radio galaxy morphologies
+- Explore the latent space of FRI/FRII galaxy classifications
+
+**Deliverable:** Latent space visualisation of radio galaxy morphologies.
 
 
-### Session 2: Embeddings-first Workflows with Clay
+### Session 2A: Embeddings-first Workflows with Clay
 
 **Goal:** Treat a foundation model as an "embedding generator" and do downstream tasks cheaply.
 
@@ -62,15 +75,37 @@ You will:
 - Load pre-computed embeddings from the Clay geospatial foundation model
 - Train lightweight classifiers (Random Forest, Logistic Regression) on embeddings
 - Build a similarity search index for retrieval
-- (Optional) Generate your own embeddings with Clay
-- (Optional) Apply retrieval to MiraBest radio galaxy morphologies
 
 **Deliverable:** A classifier trained on embeddings + a retrieval demo (top-k similar patches).
 
 **Key insight:** You can accomplish a lot *without* fine-tuning the foundation model.
 
 
-### Session 3: Parameter-Efficient Fine-Tuning with LoRA
+### Session 2B: Extension - MiraBest Retrieval
+
+**Goal:** Apply embedding-based retrieval to radio astronomy.
+
+You will:
+- Use pre-trained embeddings for MiraBest radio galaxies
+- Build a similarity search system for radio galaxy morphologies
+- Explore retrieval-based classification
+
+**Deliverable:** A retrieval demo finding similar radio galaxies.
+
+
+### Session 2C: Generate Your Own Embeddings
+
+**Goal:** Learn to generate embeddings from scratch using Clay.
+
+You will:
+- Set up the Clay model environment
+- Process your own imagery through the foundation model
+- Generate and save embeddings for downstream use
+
+**Deliverable:** Custom embeddings ready for classification or retrieval.
+
+
+### Session 3A: Parameter-Efficient Fine-Tuning with LoRA
 
 **Goal:** Understand what LoRA is doing and when to use it.
 
@@ -118,9 +153,10 @@ Uncomment in `environment.yml` if needed:
 
 | Session | CPU | GPU/MPS | RAM | Notes |
 |---------|-----|---------|-----|-------|
-| 1 | Required | Optional | 4GB+ | Faster with GPU or Apple Silicon (MPS) |
-| 2 | Required | Optional | 4GB+ | Main cost is data download |
-| 3 | Required | Optional | 4GB+ | Runs fine on CPU |
+| 1A, 1B | Required | Optional | 4GB+ | Faster with GPU or Apple Silicon (MPS) |
+| 2A, 2B | Required | Optional | 4GB+ | Main cost is data download |
+| 2C | Required | Recommended | 8GB+ | Clay model benefits from GPU |
+| 3A | Required | Optional | 4GB+ | Runs fine on CPU |
 | 3B | Required | Recommended | 8GB+ | GPU strongly recommended |
 
 **Apple Silicon users:** The notebooks automatically detect and use MPS (Metal Performance Shaders) for GPU acceleration on M1/M2/M3 Macs.
@@ -168,15 +204,16 @@ GDAL can be tricky to install. Options:
 R2SKA_Advanced_Tutorial/
 ├── README.md
 ├── environment.yml
-├── Session1_Autoencoders_LatentSpaces.ipynb
-├── Session2_Embeddings_Workflow.ipynb
-├── Session3_LoRA_Finetuning.ipynb
+├── environment-clay.yml         # For Session 2C (Clay embeddings)
+├── setup_clay_env.sh            # Helper script for Clay setup
+├── Session1A_Autoencoders_LatentSpaces.ipynb
+├── Session1B_Extension_MiraBest.ipynb
+├── Session2A_Embeddings_Workflow.ipynb
+├── Session2B_Extension_MiraBest.ipynb
+├── Session2C_Generate_Own_Embeddings.ipynb
+├── Session3A_LoRA_Finetuning.ipynb
 ├── Session3B_TerraTorch_Advanced.ipynb
 └── _archive/                    # Original notebook versions
-    ├── TUTORIAL_PLAN.md
-    ├── Practical1_*.ipynb
-    ├── Practical2_*.ipynb
-    └── Practical3_*.ipynb
 ```
 
 ---
