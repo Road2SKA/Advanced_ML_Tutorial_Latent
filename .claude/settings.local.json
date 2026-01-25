@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda env create:*)",
+      "Bash(source:*)",
+      "Bash(conda activate:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m ipykernel:*)",
+      "Bash(jupyter nbconvert:*)",
+      "Bash(conda install:*)",
+      "Bash(conda list:*)",
+      "Bash(python3:*)",
+      "Bash(conda run -n r2ska-tutorial python3:*)",
+      "mcp__ide__executeCode",
+      "Bash(/opt/anaconda3/envs/r2ska-tutorial/bin/python:*)",
+      "Bash(/opt/homebrew/bin/python3:*)",
+      "Bash(conda env list:*)",
+      "Bash(/Users/cpurcell/opt/miniconda3/envs/r2ska-tutorial/bin/python:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(chmod:*)",
+      "Bash(python -c:*)",
+      "Bash(du -sh:*)"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+name: r2ska-clay
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python version - Clay requires >=3.11
+  - python=3.11
+
+  # Core scientific stack
+  - numpy>=1.24
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - scikit-learn>=1.3
+
+  # PyTorch - Clay requires >=2.4.0
+  # For CPU or Apple Silicon (MPS):
+  - pytorch>=2.4
+  - torchvision>=0.19
+  # For NVIDIA GPU with CUDA, replace above with:
+  # - pytorch>=2.4
+  # - torchvision>=0.19
+  # - pytorch-cuda=12.1  # or 11.8 depending on your CUDA version
+
+  # Jupyter
+  - jupyterlab>=4.0
+  - ipywidgets>=8.0
+
+  # Progress bars
+  - tqdm>=4.65
+
+  # Data formats
+  - pyarrow>=12.0
+  - pillow>=9.5
+
+  # Geospatial dependencies
+  - shapely>=2.0
+  - geopandas>=0.14
+  - rasterio>=1.3
+  - contextily>=1.4
+
+  # GDAL (required for rasterio)
+  - gdal>=3.6
+
+  # Image libraries (fixes torchvision libjpeg warning on macOS)
+  - jpeg
+  - libpng
+
+  # HTTP requests
+  - requests>=2.28
+
+  # YAML parsing (for Clay config)
+  - pyyaml>=6.0
+
+  # pip dependencies
+  - pip
+  - pip:
+      # === Clay Foundation Model ===
+      # Install Clay directly from GitHub
+      - git+https://github.com/Clay-foundation/model.git
+
+      # Clay's additional dependencies (some may already be in conda)
+      - einops>=0.7.0
+      - lightning>=2.0.0
+      - timm>=0.6.0
+      - vit-pytorch
+      - python-box
+      - jsonargparse[signatures]>=4.27.7
+      - wandb
+
+      # === STAC tools for satellite imagery access ===
+      - pystac-client>=0.7
+      - stackstac>=0.5
+      # - planetary-computer>=1.0  # uncomment if using Microsoft Planetary Computer
+
+      # === Similarity search ===
+      - faiss-cpu>=1.7
+
+      # === Optional: Weights & Biases for experiment tracking ===
+      # wandb is included above (Clay dependency)
