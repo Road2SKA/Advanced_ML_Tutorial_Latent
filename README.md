@@ -14,10 +14,9 @@ extension to support Project H - *Flood Mapping from Orbit*.
 | **2B** | Extension: MiraBest Retrieval | Live | [Session2B_Extension_MiraBest.ipynb](Session2B_Extension_MiraBest.ipynb) |
 | **3A** | LoRA Fine-tuning | Live | [Session3A_LoRA_Finetuning.ipynb](Session3A_LoRA_Finetuning.ipynb) |
 | **4A** | Generate Your Own Embeddings (Clay) | Project H | [Session4A_Generate_Own_Embeddings.ipynb](Session4A_Generate_Own_Embeddings.ipynb) |
-| **4B** | Advanced: TerraTorch | Project H | [Session4B_TerraTorch_Advanced.ipynb](Session4B_TerraTorch_Advanced.ipynb) |
 
 Sessions 1-3 are designed to be CPU-friendly and run on standard laptops, while 
-a GPU or Apple Silicon (M1/M2/M3/M4) is recommended for Sessions 4A and 4B.
+a GPU or Apple Silicon (M1/M2/M3/M4) is recommended for Sessions 4A.
 
 ---
 
@@ -36,7 +35,7 @@ conda activate r2ska-tutorial
 jupyter lab
 ```
 
-### 3. Open Session 1 and follow along
+### 3. Open Session 1A and follow along
 
 ---
 
@@ -46,7 +45,6 @@ jupyter lab
 
 **Goal:** Make latent spaces tangible.
 
-You will:
 - Train a small convolutional autoencoder on MNIST (or Fashion-MNIST)
 - Extract latent vectors and visualise with PCA and UMAP
 - Explore latent interpolation between samples
@@ -58,7 +56,6 @@ You will:
 
 **Goal:** Apply autoencoder concepts to real radio astronomy data.
 
-You will:
 - Load MiraBest radio galaxy images
 - Train an autoencoder on radio galaxy morphologies
 - Explore the latent space of FRI/FRII galaxy classifications
@@ -69,21 +66,15 @@ You will:
 **Goal:** Treat a foundation model as an "embedding generator" and do downstream
 tasks cheaply.
 
-You will:
 - Load pre-computed embeddings from the Clay geospatial foundation model
 - Train lightweight classifiers (Random Forest, Logistic Regression) on embeddings
 - Build a similarity search index for retrieval
-
-**Deliverable:** A classifier trained on embeddings + a retrieval demo (top-k similar patches).
-
-**Key insight:** You can accomplish a lot *without* fine-tuning the foundation model.
 
 
 ### Session 2B: Extension - MiraBest Retrieval
 
 **Goal:** Apply embedding-based retrieval to radio astronomy.
 
-You will:
 - Use pre-trained embeddings for MiraBest radio galaxies
 - Build a similarity search system for radio galaxy morphologies
 - Explore retrieval-based classification
@@ -93,7 +84,6 @@ You will:
 
 **Goal:** Understand what LoRA is doing and when to use it.
 
-You will:
 - Train a base CNN classifier
 - Adapt it to a shifted domain (rotated + noisy images) using:
   - Full fine-tuning
@@ -106,19 +96,10 @@ You will:
 
 **Goal:** Learn to generate embeddings from scratch using a real foundation model.
 
-You will:
 - Set up the Clay foundation model environment
 - Process your own imagery through the foundation model
 - Generate and save embeddings for downstream use
 
-
-### Session 4B (Advanced): TerraTorch + Prithvi-EO-2.0
-
-**Goal:** Experience a realistic geospatial fine-tuning workflow.
-
-This session uses TerraTorch to fine-tune Prithvi-EO-2.0 for flood segmentation.
-It requires additional dependencies (GDAL, rasterio, terratorch) and is best 
-suited for participants with GPU access.
 
 ---
 
@@ -192,8 +173,7 @@ R2SKA_Advanced_Tutorial/
 ├── Session2A_Embeddings_Workflow.ipynb
 ├── Session2B_Extension_MiraBest.ipynb
 ├── Session3A_LoRA_Finetuning.ipynb
-├── Session4A_Generate_Own_Embeddings.ipynb
-└── Session4B_TerraTorch_Advanced.ipynb
+└── Session4A_Generate_Own_Embeddings.ipynb
 ```
 
 ---
