@@ -19,7 +19,11 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(chmod:*)",
       "Bash(python -c:*)",
-      "Bash(du -sh:*)"
+      "Bash(du -sh:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }

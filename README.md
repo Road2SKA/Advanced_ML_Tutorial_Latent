@@ -1,22 +1,23 @@
 # Road to SKA: Foundation Models, Embeddings, and Latent Spaces
 
-An advanced tutorial for astrophysics students on machine learning concepts central to modern foundation models.
+This tutorial consists of four practical sessions designed to build intuition
+about latent spaces, embeddings, parameter-efficient fine-tuning, and real-world
+foundation model usage. Sessions 1-3 will be covered live, while Session 4 is an
+extension to support Project H - *Flood Mapping from Orbit*.
 
-## Overview
-
-This tutorial consists of four practical sessions designed to build intuition about latent spaces, embeddings, parameter-efficient fine-tuning, and real-world foundation model usage:
 
 | Session | Topic | Type | Notebook |
 |---------|-------|------|----------|
 | **1A** | Autoencoders & Latent Spaces | Live | [Session1A_Autoencoders_LatentSpaces.ipynb](Session1A_Autoencoders_LatentSpaces.ipynb) |
-| **1B** | Extension: MiraBest Radio Galaxies | Homework | [Session1B_Extension_MiraBest.ipynb](Session1B_Extension_MiraBest.ipynb) |
+| **1B** | Extension: MiraBest Radio Galaxies | Live | [Session1B_Extension_MiraBest.ipynb](Session1B_Extension_MiraBest.ipynb) |
 | **2A** | Embeddings-first Workflows | Live | [Session2A_Embeddings_Workflow.ipynb](Session2A_Embeddings_Workflow.ipynb) |
-| **2B** | Extension: MiraBest Retrieval | Homework | [Session2B_Extension_MiraBest.ipynb](Session2B_Extension_MiraBest.ipynb) |
+| **2B** | Extension: MiraBest Retrieval | Live | [Session2B_Extension_MiraBest.ipynb](Session2B_Extension_MiraBest.ipynb) |
 | **3A** | LoRA Fine-tuning | Live | [Session3A_LoRA_Finetuning.ipynb](Session3A_LoRA_Finetuning.ipynb) |
-| **4A** | Generate Your Own Embeddings (Clay) | Live | [Session4A_Generate_Own_Embeddings.ipynb](Session4A_Generate_Own_Embeddings.ipynb) |
-| **4B** | Advanced: TerraTorch | Homework | [Session4B_TerraTorch_Advanced.ipynb](Session4B_TerraTorch_Advanced.ipynb) |
+| **4A** | Generate Your Own Embeddings (Clay) | Project H | [Session4A_Generate_Own_Embeddings.ipynb](Session4A_Generate_Own_Embeddings.ipynb) |
+| **4B** | Advanced: TerraTorch | Project H | [Session4B_TerraTorch_Advanced.ipynb](Session4B_TerraTorch_Advanced.ipynb) |
 
-All sessions are designed to be **CPU-friendly** and run on standard laptops. **Apple Silicon (M1/M2/M3) is supported** via MPS acceleration.
+Sessions 1-3 are designed to be CPU-friendly and run on standard laptops, while 
+a GPU or Apple Silicon (M1/M2/M3/M4) is recommended for Sessions 4A and 4B.
 
 ---
 
@@ -52,8 +53,6 @@ You will:
 - Perform latent traversals (vary one dimension)
 - Train a Variational Autoencoder (VAE) and compare
 
-**Deliverable:** A figure showing a latent manifold + reconstructions + interpolations.
-
 
 ### Session 1B: Extension - MiraBest Radio Galaxies
 
@@ -64,12 +63,11 @@ You will:
 - Train an autoencoder on radio galaxy morphologies
 - Explore the latent space of FRI/FRII galaxy classifications
 
-**Deliverable:** Latent space visualisation of radio galaxy morphologies.
-
 
 ### Session 2A: Embeddings-first Workflows with Clay
 
-**Goal:** Treat a foundation model as an "embedding generator" and do downstream tasks cheaply.
+**Goal:** Treat a foundation model as an "embedding generator" and do downstream
+tasks cheaply.
 
 You will:
 - Load pre-computed embeddings from the Clay geospatial foundation model
@@ -90,8 +88,6 @@ You will:
 - Build a similarity search system for radio galaxy morphologies
 - Explore retrieval-based classification
 
-**Deliverable:** A retrieval demo finding similar radio galaxies.
-
 
 ### Session 3A: Parameter-Efficient Fine-Tuning with LoRA
 
@@ -105,8 +101,6 @@ You will:
   - LoRA fine-tuning
 - Compare accuracy, training time, and trainable parameters
 
-**Deliverable:** A comparison table showing linear probe vs LoRA vs full fine-tune.
-
 
 ### Session 4A: Generate Your Own Embeddings with Clay
 
@@ -117,17 +111,14 @@ You will:
 - Process your own imagery through the foundation model
 - Generate and save embeddings for downstream use
 
-**Deliverable:** Custom embeddings ready for classification or retrieval.
-
 
 ### Session 4B (Advanced): TerraTorch + Prithvi-EO-2.0
 
 **Goal:** Experience a realistic geospatial fine-tuning workflow.
 
-This optional session uses TerraTorch to fine-tune Prithvi-EO-2.0 for flood segmentation. It requires additional dependencies (GDAL, rasterio, terratorch) and is best suited for participants with:
-- A working GDAL installation
-- GPU access (recommended)
-- Reliable internet for data downloads
+This session uses TerraTorch to fine-tune Prithvi-EO-2.0 for flood segmentation.
+It requires additional dependencies (GDAL, rasterio, terratorch) and is best 
+suited for participants with GPU access.
 
 ---
 
@@ -148,18 +139,6 @@ Uncomment in `environment.yml` if needed:
 
 - **STAC workflows:** pystac-client, stackstac, planetary-computer
 - **TerraTorch:** gdal, rasterio, terratorch
-
-### Hardware requirements
-
-| Session | CPU | GPU/MPS | RAM | Notes |
-|---------|-----|---------|-----|-------|
-| 1A, 1B | Required | Optional | 4GB+ | Faster with GPU or Apple Silicon (MPS) |
-| 2A, 2B | Required | Optional | 4GB+ | Main cost is data download |
-| 3A | Required | Optional | 4GB+ | Runs fine on CPU |
-| 4A | Required | Recommended | 8GB+ | Clay model benefits from GPU |
-| 4B | Required | Recommended | 8GB+ | GPU strongly recommended |
-
-**Apple Silicon users:** The notebooks automatically detect and use MPS (Metal Performance Shaders) for GPU acceleration on M1/M2/M3 Macs.
 
 ---
 
@@ -186,7 +165,9 @@ pip install umap-learn
 
 ### Data download issues (Session 2)
 
-Each notebook includes an **offline fallback** section that uses built-in sklearn datasets (e.g., `load_digits()`). You can learn the workflow pattern without external downloads.
+Each notebook includes an **offline fallback** section that uses built-in sklearn
+datasets (e.g., `load_digits()`). You can learn the workflow pattern without
+external downloads.
 
 ### GDAL/rasterio issues (Session 4B)
 
@@ -212,8 +193,7 @@ R2SKA_Advanced_Tutorial/
 ├── Session2B_Extension_MiraBest.ipynb
 ├── Session3A_LoRA_Finetuning.ipynb
 ├── Session4A_Generate_Own_Embeddings.ipynb
-├── Session4B_TerraTorch_Advanced.ipynb
-└── _archive/                    # Original notebook versions
+└── Session4B_TerraTorch_Advanced.ipynb
 ```
 
 ---
@@ -238,9 +218,3 @@ R2SKA_Advanced_Tutorial/
 - [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
 - [MiraBest (radio galaxies)](https://doi.org/10.5281/zenodo.4288837)
 - [Sen1Floods11](https://github.com/cloudtostreet/Sen1Floods11)
-
----
-
-## License
-
-Tutorial materials provided for educational use at the Road to SKA workshop.
