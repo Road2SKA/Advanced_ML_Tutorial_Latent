@@ -15,12 +15,37 @@ extension to support Project H - *Flood Mapping from Orbit*.
 | **3A** | LoRA Fine-tuning | Live | [Session3A_LoRA_Finetuning.ipynb](Session3A_LoRA_Finetuning.ipynb) |
 | **4A** | Generate Your Own Embeddings (Clay) | Project H | [Session4A_Generate_Own_Embeddings.ipynb](Session4A_Generate_Own_Embeddings.ipynb) |
 
-Sessions 1-3 are designed to be CPU-friendly and run on standard laptops, while 
-a GPU or Apple Silicon (M1/M2/M3/M4) is recommended for Sessions 4A.
+Sessions 1-3 are designed to be CPU-friendly and run on standard laptops, while
+a GPU or Apple Silicon (M1/M2/M3/M4) is recommended for Session 4A.
 
 ---
 
-## Quick Start
+## Run in Google Colab (Recommended for Beginners)
+
+The quickest way to get started is using **Google Colab** — no installation required!
+
+| Session | Topic | Colab Link |
+|---------|-------|------------|
+| **1A** | Autoencoders & Latent Spaces | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session1A_Autoencoders_LatentSpaces.ipynb) |
+| **1B** | Extension: MiraBest Radio Galaxies | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session1B_Extension_MiraBest.ipynb) |
+| **2A** | Embeddings-first Workflows | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session2A_Embeddings_Workflow.ipynb) |
+| **2B** | Extension: MiraBest Retrieval | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session2B_Extension_MiraBest.ipynb) |
+| **3A** | LoRA Fine-tuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session3A_LoRA_Finetuning.ipynb) |
+| **4A** | Generate Your Own Embeddings | ⚠️ **Local only** — [see setup instructions](#session-4a-generate-your-own-embeddings-with-clay) |
+
+### Colab Tips
+
+- **Enable GPU** (optional but faster): `Runtime` → `Change runtime type` → `GPU`
+- **Session timeout**: Colab disconnects after ~90 minutes of inactivity. Save your work!
+- **Persistent storage**: Use Google Drive mounting if you want to save data between sessions:
+  ```python
+  from google.colab import drive
+  drive.mount('/content/drive')
+  ```
+
+---
+
+## Quick Start (Local Installation)
 
 ### 1. Create the conda environment
 
@@ -99,6 +124,17 @@ tasks cheaply.
 - Set up the Clay foundation model environment
 - Process your own imagery through the foundation model
 - Generate and save embeddings for downstream use
+
+> ⚠️ **Local execution required** — This notebook cannot run on Google Colab due to:
+> - Clay requires Python 3.11+ (Colab has 3.10)
+> - Large checkpoint download (1.2 GB)
+> - GDAL/rasterio compilation issues
+>
+> **Setup:** Use the dedicated Clay environment:
+> ```bash
+> conda env create -f environment-clay.yml
+> conda activate r2ska-clay
+> ```
 
 
 ---
