@@ -26,7 +26,14 @@
       "Bash(git push)",
       "WebSearch",
       "WebFetch(domain:stackstac.readthedocs.io)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(for nb in Session*.ipynb)",
+      "Bash(do python3 -c \"import json; json.load\\(open\\(''$nb''\\)\\)\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(git push:*)",
+      "Bash(grep:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && grep \"\"DATA_ROOT\"\" {} | head -10')"
     ]
   }
 }

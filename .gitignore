@@ -8,7 +8,7 @@ data/
 # Model checkpoints and weights
 *.ckpt
 *.pt
-*.pth
+#*.pth
 *.h5
 *.hdf5
 *.keras
@@ -17,7 +17,7 @@ data/
 *.safetensors
 
 # Serialized objects
-*.pkl
+#*.pkl
 *.pickle
 *.joblib
 
