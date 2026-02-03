@@ -26,11 +26,11 @@ The quickest way to get started is using **Google Colab** — no installation re
 
 | Session | Topic | Colab Link |
 |---------|-------|------------|
-| **1A** | Autoencoders & Latent Spaces | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session1A_Autoencoders_LatentSpaces.ipynb) |
-| **1B** | Extension: MiraBest Radio Galaxies | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session1B_Extension_MiraBest.ipynb) |
-| **2A** | Embeddings-first Workflows | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session2A_Embeddings_Workflow.ipynb) |
-| **2B** | Extension: MiraBest Retrieval | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session2B_Extension_MiraBest.ipynb) |
-| **3A** | LoRA Fine-tuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cambridge-iccs/R2SKA_Advanced_Tutorial/blob/main/Session3A_LoRA_Finetuning.ipynb) |
+| **1A** | Autoencoders & Latent Spaces | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Road2SKA/Advanced_ML_Tutorial_Latent/blob/colab/Session1A_Autoencoders_LatentSpaces.ipynb) |
+| **1B** | Extension: MiraBest Radio Galaxies | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Road2SKA/Advanced_ML_Tutorial_Latent/blob/colab/Session1B_Extension_MiraBest.ipynb) |
+| **2A** | Embeddings-first Workflows | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Road2SKA/Advanced_ML_Tutorial_Latent/blob/colab/Session2A_Embeddings_Workflow.ipynb) |
+| **2B** | Extension: MiraBest Retrieval | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Road2SKA/Advanced_ML_Tutorial_Latent/blob/colab/Session2B_Extension_MiraBest.ipynb) |
+| **3A** | LoRA Fine-tuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Road2SKA/Advanced_ML_Tutorial_Latent/blob/colab/Session3A_LoRA_Finetuning.ipynb) |
 | **4A** | Generate Your Own Embeddings | ⚠️ **Local only** — [see setup instructions](#session-4a-generate-your-own-embeddings-with-clay) |
 
 ### Colab Tips
